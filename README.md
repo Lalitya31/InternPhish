@@ -1,5 +1,6 @@
 # InternPhish
 *Fake internships hurt for real.*
+
 InternPhish is a community-driven platform that helps students identify, report, and verify internship opportunities to prevent scams. Many fake internships exploit desperate students by asking for registration fees, training payments, or deposits. InternPhish allows students to report such scams and warn others before they fall into the trap.
 
 ## The Problem
