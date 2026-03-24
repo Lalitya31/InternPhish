@@ -98,7 +98,10 @@ body{font-family:'Aldrich',sans-serif;margin:0;color:#fff;line-height:1.45;backg
 .report-form h2{font-family:'Aldrich',sans-serif;font-size:20px;margin:6px 0 12px;color:rgba(255,255,255,0.85)}
 .report-form label{display:block;margin:8px 0 6px;color:rgba(255,255,255,0.6);font-size:14px}
 .report-form input[type="text"],.report-form textarea{width:100%;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#fff;font-family:inherit}
-.report-form input[type="file"]{color:rgba(255,255,255,0.7)}
+.report-form input[type="file"]{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
+.file-upload{display:flex;align-items:center;gap:12px}
+.file-btn{background:linear-gradient(180deg,#111,#0a0a0a);color:#fff;padding:8px 12px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);cursor:pointer;font-family:'Aldrich',sans-serif}
+.file-name{font-family:'Aldrich',sans-serif;color:rgba(255,255,255,0.6);font-size:14px}
 .form-actions{margin-top:12px}
 .btn-primary{background:linear-gradient(180deg,#0a0a0a,#111);color:#fff;padding:12px 20px;border-radius:28px;border:1px solid rgba(255,255,255,0.06);cursor:pointer;font-family:'Aldrich',sans-serif;font-weight:600}
 

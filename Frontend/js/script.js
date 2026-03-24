@@ -62,3 +62,16 @@ document.addEventListener('DOMContentLoaded', ()=>{
     });
   }
 });
+
+// Wire up custom file picker UI
+document.addEventListener('DOMContentLoaded', ()=>{
+  const fileInput = document.getElementById('evidence');
+  const fileName = document.getElementById('file-name');
+  if(fileInput && fileName){
+    fileInput.addEventListener('change', (e)=>{
+      const f = e.target.files && e.target.files[0];
+      fileName.textContent = f ? f.name : 'No file chosen';
+    });
+    // make the label click trigger the hidden input (label[for] already does this)
+  }
+});
