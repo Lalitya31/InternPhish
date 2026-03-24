@@ -16,8 +16,28 @@
     <main class="verify-page">
       <div class="container verify-inner">
         <section class="verify-left">
-          <!-- Reserved: left section (decide later) -->
-          <div class="placeholder" style="height:320px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.08);">Left column — content TBD</div>
+          <div class="report-stats">
+            <span class="reports-label">Number of reports:</span>
+            <span class="reports-count" id="reports-count">0</span>
+          </div>
+
+          <section class="report-form">
+            <h2>Report</h2>
+            <form id="report-form">
+              <label for="org-name">Organization name</label>
+              <input id="org-name" name="orgName" type="text" placeholder="e.g. FakeCorp Ltd" required />
+
+              <label for="proof">Proof / Description</label>
+              <textarea id="proof" name="proof" rows="4" placeholder="Explain why this is fake"></textarea>
+
+              <label for="evidence">Attach evidence (optional)</label>
+              <input id="evidence" name="evidence" type="file" />
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Submit report</button>
+              </div>
+            </form>
+          </section>
         </section>
 
         <aside class="verify-right">

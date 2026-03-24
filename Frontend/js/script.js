@@ -29,3 +29,36 @@ document.addEventListener('DOMContentLoaded', function () {
   // NOTE: 'scam detected' hover signal removed per request. Hover signal logic
   // will be reintroduced later if/when needed.
 });
+
+// Simple demo counter for reports (dummy data). Replaces number smoothly.
+function animateReportsCount(target){
+  const el = document.getElementById('reports-count');
+  if(!el) return;
+  let current = 0;
+  const stepTime = Math.max(20, Math.floor(1200 / Math.max(1, target)));
+  const timer = setInterval(()=>{
+    current += Math.max(1, Math.floor(target/60));
+    if(current >= target){
+      current = target;
+      clearInterval(timer);
+    }
+    el.textContent = current.toLocaleString();
+  }, stepTime);
+}
+
+// Example: pick a dummy live value (will be replaced by real data later)
+document.addEventListener('DOMContentLoaded', ()=>{
+  // random-ish demo value
+  const demo = 1245;
+  animateReportsCount(demo);
+
+  // prevent default report form submission (placeholder)
+  const form = document.getElementById('report-form');
+  if(form){
+    form.addEventListener('submit', (e)=>{
+      e.preventDefault();
+      alert('Report submitted (demo).');
+      form.reset();
+    });
+  }
+});
