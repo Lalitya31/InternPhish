@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Aldrich&display=swap');
 
 :root{
   --max-width:1100px;
@@ -84,14 +85,43 @@ body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#fff;
 .verify-page{padding:60px 0 120px;min-height:70vh}
 .verify-inner{display:flex;gap:40px;align-items:flex-start}
 .verify-left{flex:1}
-.verify-right{flex:1;max-width:560px;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
-.verify-right .notice{color:rgba(255,255,255,0.62);opacity:0.95}
-.verify-right .subject{margin:0 0 12px;font-family:'Aldrich',sans-serif;font-size:18px;color:rgba(255,255,255,0.72)}
-.verify-right p{margin:12px 0;color:rgba(255,255,255,0.6);line-height:1.5}
-.price{font-weight:700;color:rgba(255,255,255,0.9);margin-top:8px}
-.meta-list{list-style:none;padding:0;margin:12px 0 0;color:rgba(255,255,255,0.55)}
+.verify-right{flex:1;max-width:560px;padding:0;background:transparent;border-radius:0;border:0;position:relative;text-align:right}
+
+/* No visible box — plain Aldrich text with subtle haze behind it */
+.verify-right .notice{
+  font-family: 'Aldrich',sans-serif;
+  color: rgba(255,255,255,0.39);
+  background: transparent;
+  padding: 0;
+  display: inline-block;
+  text-align: left;
+  max-width:420px;
+  line-height:1.45;
+  position: relative;
+}
+
+/* soft, non-boxy haze behind the text (not a rectangle) */
+.verify-right .notice::before{
+  content: '';
+  position: absolute;
+  right: -40px;
+  top: 6px;
+  width: 360px;
+  height: 180px;
+  background: radial-gradient(circle at 35% 30%, rgba(255,255,255,0.06), rgba(255,255,255,0.02) 35%, transparent 60%);
+  filter: blur(18px);
+  -webkit-filter: blur(18px);
+  z-index: -1;
+  pointer-events: none;
+  border-radius: 50%;
+}
+
+.verify-right .subject{margin:0 0 12px;font-size:18px;color:rgba(255,255,255,0.72);font-family:'Aldrich',sans-serif}
+.verify-right p{margin:12px 0;color:rgba(255,255,255,0.39);line-height:1.5;font-family:'Aldrich',sans-serif}
+.price{font-weight:700;color:rgba(255,255,255,0.75);margin-top:8px}
+.meta-list{list-style:none;padding:0;margin:12px 0 0;color:rgba(255,255,255,0.45)}
 .meta-list li{margin:6px 0}
-.closing{margin-top:18px;color:rgba(255,255,255,0.58)}
+.closing{margin-top:18px;color:rgba(255,255,255,0.42)}
 
 @media (max-width:900px){
   .verify-inner{flex-direction:column}
