@@ -24,14 +24,14 @@
           <section class="report-form">
             <h2>Report</h2>
             <form id="report-form">
-              <label for="org-name">Organization name</label>
+              <label for="org-name">Organization name <span style="opacity:0.75">*</span></label>
               <input id="org-name" name="orgName" type="text" placeholder="e.g. FakeCorp Ltd" required />
 
-              <label for="proof">Proof / Description</label>
-              <textarea id="proof" name="proof" rows="4" placeholder="Explain why this is fake"></textarea>
+              <label for="proof">Proof / Description <span style="opacity:0.75">*</span></label>
+              <textarea id="proof" name="proof" rows="4" placeholder="Explain why this is fake" required></textarea>
 
-              <label for="evidence">Attach evidence (optional)</label>
-              <input id="evidence" name="evidence" type="file" />
+              <label for="evidence">Attach evidence <span style="opacity:0.75">*</span></label>
+              <input id="evidence" name="evidence" type="file" required />
 
               <div class="form-actions">
                 <button type="submit" class="btn-primary">Submit report</button>

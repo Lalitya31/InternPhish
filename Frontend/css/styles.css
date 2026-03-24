@@ -12,7 +12,7 @@
 
 *{box-sizing:border-box}
 html,body{height:100%}
-body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#fff;line-height:1.45;background:var(--bg);overflow-x:hidden}
+body{font-family:'Aldrich',sans-serif;margin:0;color:#fff;line-height:1.45;background:var(--bg);overflow-x:hidden}
 .container{max-width:var(--max-width);margin:0 auto;padding:0 20px}
 .site-header{background:transparent}
 .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:20px 20px}
@@ -34,13 +34,13 @@ body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#fff;
 .hero-inner{display:flex;gap:40px;align-items:flex-end;position:relative;z-index:2;padding-top:40px}
 .hero-copy{flex:1;max-width:640px}
 .hero-copy{transform:translateX(-20%)}
-.brand{font-family:'VT323',monospace;font-size:84px;letter-spacing:2px;margin:0;color:#fff}
+.brand{font-family:'Aldrich',sans-serif;font-size:84px;letter-spacing:2px;margin:0;color:#fff}
 .subbrand{font-family:'Aldrich',sans-serif;font-size:18px;margin:6px 0 22px;color:rgba(255,255,255,0.85)}
 .body-copy{color:rgba(255,255,255,0.35);font-size:15px}
 .body-copy p{margin:12px 0}
 
 .cta-wrap{margin:28px 0}
-.cta{display:inline-block;background:linear-gradient(180deg,#0a0a0a,#111);color:#fff;padding:18px 36px;border-radius:40px;text-decoration:none;font-family:'VT323',monospace;font-size:20px;box-shadow:0 12px 30px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.06)}
+.cta{display:inline-block;background:linear-gradient(180deg,#0a0a0a,#111);color:#fff;padding:18px 36px;border-radius:40px;text-decoration:none;font-family:'Aldrich',sans-serif;font-size:20px;box-shadow:0 12px 30px rgba(0,0,0,0.7);border:1px solid rgba(255,255,255,0.06)}
 .below-cta{margin-top:10px;color:rgba(255,255,255,0.6)}
 
 .hero-media{flex:1;display:flex;align-items:flex-end;justify-content:center}
@@ -91,7 +91,7 @@ body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#fff;
 /* Reports stats (left column) */
 .report-stats{display:flex;align-items:center;justify-content:flex-start;gap:12px;margin-bottom:18px}
 .reports-label{font-family:'Aldrich',sans-serif;color:rgba(255,255,255,0.72);font-size:16px}
-.reports-count{font-family:'VT323',monospace;color:rgba(255,255,255,0.92);font-size:34px;letter-spacing:1px}
+.reports-count{font-family:'Aldrich',sans-serif;color:rgba(255,255,255,0.92);font-size:34px;letter-spacing:1px}
 
 /* Report form */
 .report-form{margin-top:12px;max-width:680px}
@@ -100,7 +100,7 @@ body{font-family:Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;color:#fff;
 .report-form input[type="text"],.report-form textarea{width:100%;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#fff;font-family:inherit}
 .report-form input[type="file"]{color:rgba(255,255,255,0.7)}
 .form-actions{margin-top:12px}
-.btn-primary{background:linear-gradient(180deg,#111,#0a0a0a);color:#fff;padding:10px 16px;border-radius:10px;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+.btn-primary{background:linear-gradient(180deg,#0a0a0a,#111);color:#fff;padding:12px 20px;border-radius:28px;border:1px solid rgba(255,255,255,0.06);cursor:pointer;font-family:'Aldrich',sans-serif;font-weight:600}
 
 /* No visible box — plain Aldrich text with subtle haze behind it */
 .verify-right .notice{
