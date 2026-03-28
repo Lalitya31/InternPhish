@@ -63,6 +63,29 @@ document.addEventListener('DOMContentLoaded', ()=>{
   }
 });
 
+// Basic search handling for verify page (keeps theme and is unobtrusive)
+document.addEventListener('DOMContentLoaded', ()=>{
+  const searchForm = document.getElementById('search-form');
+  const searchInput = document.getElementById('search-input');
+  if(!searchForm || !searchInput) return;
+  searchForm.addEventListener('submit', (e)=>{
+    e.preventDefault();
+    const q = searchInput.value.trim();
+    if(!q){
+      // subtle feedback: focus input
+      searchInput.focus();
+      return;
+    }
+    // Placeholder behavior: if a real report list exists, implement filtering here.
+    // For now, show a gentle non-blocking message in console and flash a tiny UI hint.
+    console.log('Search query:', q);
+    // small visual hint: temporarily change border color
+    const orig = searchInput.style.boxShadow;
+    searchInput.style.boxShadow = '0 0 0 3px rgba(255,255,255,0.04)';
+    setTimeout(()=>searchInput.style.boxShadow = orig, 600);
+  });
+});
+
 // Wire up custom file picker UI
 document.addEventListener('DOMContentLoaded', ()=>{
   const fileInput = document.getElementById('evidence');

@@ -96,6 +96,12 @@ body{font-family:'Aldrich',sans-serif;margin:0;color:#fff;line-height:1.45;backg
 /* Report form */
 .report-form{margin-top:12px;max-width:680px}
 .report-form h2{font-family:'Aldrich',sans-serif;font-size:20px;margin:6px 0 12px;color:rgba(255,255,255,0.85)}
+.search-bar{margin:0 0 18px;max-width:520px}
+.search-bar form{display:flex;gap:8px;align-items:center}
+.search-input{flex:1;padding:10px 12px;border-radius:10px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#fff;font-family:inherit;max-width:420px}
+.search-input::placeholder{color:rgba(255,255,255,0.34)}
+.search-btn{background:transparent;border:1px solid rgba(255,255,255,0.04);color:rgba(255,255,255,0.72);padding:10px 14px;border-radius:10px;cursor:pointer}
+.search-btn:hover{background:rgba(255,255,255,0.02)}
 .report-form label{display:block;margin:8px 0 6px;color:rgba(255,255,255,0.6);font-size:14px}
 .report-form input[type="text"],.report-form textarea{width:100%;padding:10px;border-radius:8px;background:rgba(255,255,255,0.02);border:1px solid rgba(255,255,255,0.03);color:#fff;font-family:inherit}
 .report-form input[type="file"]{position:absolute;opacity:0;pointer-events:none;width:0;height:0}
@@ -117,6 +123,16 @@ body{font-family:'Aldrich',sans-serif;margin:0;color:#fff;line-height:1.45;backg
   line-height:1.45;
   position: relative;
 }
+
+/* subtle baseline contact under verify columns */
+.verify-right .verify-contact{width:100%;margin-top:12px}
+.verify-right .owner-contact{color:rgba(255,255,255,0.26);font-size:13px;margin:0;text-align:right}
+.verify-right .owner-contact a{color:rgba(255,255,255,0.68);text-decoration:underline;font-weight:600}
+
+/* footer contact small line */
+.site-footer .footer-contact{font-size:12px;color:rgba(255,255,255,0.28);margin-top:10px;text-align:right}
+.site-footer .footer-contact a{color:rgba(255,255,255,0.68);text-decoration:underline}
+
 
 /* soft, non-boxy haze behind the text (not a rectangle) */
 .verify-right .notice::before{

@@ -10,12 +10,24 @@
     <header class="site-header">
       <div class="container">
         <a class="logo" href="index.html">InternPhish</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="#reports">Reports</a>
+          <a href="#help">Help</a>
+        </nav>
       </div>
     </header>
 
     <main class="verify-page">
       <div class="container verify-inner">
         <section class="verify-left">
+          <div class="search-bar">
+            <form id="search-form" role="search">
+              <input id="search-input" class="search-input" type="search" placeholder="Search reports by organization" aria-label="Search reports" />
+              <button class="search-btn" type="submit">Search</button>
+            </form>
+          </div>
+
           <div class="report-stats">
             <span class="reports-label">Number of reports:</span>
             <span class="reports-count" id="reports-count">0</span>
@@ -62,12 +74,17 @@
 
             <p class="closing">Looking forward to your payment.</p>
           </div>
+        
+          <!-- contact moved to footer -->
         </aside>
       </div>
     </main>
 
     <footer class="site-footer">
-      <div class="container">© InternPhish</div>
+      <div class="container">
+        <div>© InternPhish</div>
+        <div class="footer-contact">Think your internship is genuine but was reported? <a href="mailto:contact@internphish.example">Contact the site owner</a>.</div>
+      </div>
     </footer>
 
   </body>
