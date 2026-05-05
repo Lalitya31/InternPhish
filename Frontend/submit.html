@@ -1,0 +1,162 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Submit a Report — InternPhish</title>
+    <meta name="description"
+        content="Experienced a fake internship scam? Submit your report to help protect other job seekers." />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Aldrich&family=VT323&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+</head>
+
+<body>
+    <header class="site-header">
+        <div class="container">
+            <a class="logo" href="index.html">InternPhish</a>
+            <nav class="nav" aria-label="Main navigation">
+                <a href="index.html">Home</a>
+                <a href="reports.html">Reports</a>
+                <a href="breakdown.html">Breakdown</a>
+                <a href="submit.html" class="active">Submit</a>
+                <a href="about.html">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="submit-page">
+        <div class="container">
+
+            <!-- Form section -->
+            <section id="form-section">
+                <div class="submit-inner">
+                    <div class="submit-left">
+                        <h1>Submit a Report</h1>
+                        <p class="submit-desc">Paste the scam message you received. We'll auto-detect red-flag patterns
+                            and tag it for other users.</p>
+
+                        <form id="submit-form" novalidate>
+                            <input type="hidden" id="detected-tags" name="detected_tags" />
+
+                            <div class="form-group">
+                                <label for="org-name">Organization Name <span style="color:#ff4444">*</span></label>
+                                <input id="org-name" name="org" type="text"
+                                    placeholder="e.g. SkillBridge Internship Hub" required autocomplete="off" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="scam-message">Scam Message <span style="color:#ff4444">*</span></label>
+                                <textarea id="scam-message" name="message" rows="7"
+                                    placeholder="Paste the full message you received here. We'll analyze it for red-flag phrases…"
+                                    required></textarea>
+                            </div>
+
+                            <div class="auto-tags-section">
+                                <div class="auto-tags-label">Auto-detected scam patterns</div>
+                                <div class="auto-tags-wrap" id="auto-tags"></div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fee">Fee Amount (₹)</label>
+                                <input id="fee" name="fee" type="text" placeholder="e.g. 1999" inputmode="numeric" />
+                            </div>
+
+                            <div class="form-group">
+                                <label for="notes">Additional Notes</label>
+                                <textarea id="notes" name="notes" rows="3"
+                                    placeholder="Anything else worth mentioning — platform, contact number, how you were approached…"></textarea>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-primary">Submit Report</button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <aside class="submit-right">
+                        <div class="submit-info-card">
+                            <h3>What happens next?</h3>
+                            <ul class="info-list">
+                                <li>
+                                    <span class="icon">🔍</span>
+                                    <span>Your report is reviewed and tagged automatically by our scam-pattern
+                                        engine.</span>
+                                </li>
+                                <li>
+                                    <span class="icon">📋</span>
+                                    <span>It gets added to the public Reports Hub so others can search and find
+                                        it.</span>
+                                </li>
+                                <li>
+                                    <span class="icon">🔗</span>
+                                    <span>Similar reports are linked together to help identify repeat offenders.</span>
+                                </li>
+                                <li>
+                                    <span class="icon">🔒</span>
+                                    <span>Your identity is never revealed. Reports are fully anonymous.</span>
+                                </li>
+                                <li>
+                                    <span class="icon">📣</span>
+                                    <span>Anyone who searches that org name will see your report and warning
+                                        tags.</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </aside>
+                </div>
+            </section>
+
+            <!-- Success state -->
+            <section id="success-section" hidden>
+                <div class="success-section">
+                    <div class="success-icon">✅</div>
+                    <h2>Report Submitted</h2>
+                    <p>Thank you. Your report has been logged and will be reviewed. Together we're making it harder for
+                        these scams to hurt someone else.</p>
+                    <div class="success-actions">
+                        <button id="submit-another" class="btn-primary">Submit Another</button>
+                        <a href="reports.html" class="btn-outline">View All Reports</a>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <div class="footer-links">
+                <a href="about.html">About</a>
+                <a href="privacy.html">Privacy Policy</a>
+                <a href="terms.html">Terms</a>
+                <a href="reports.html">Reports</a>
+            </div>
+            <div class="footer-right">
+                <div class="footer-meta">
+                    <a class="github" href="https://github.com/Lalitya31/InternPhish" target="_blank"
+                        rel="noopener noreferrer" aria-label="GitHub">
+                        <svg width="24" height="24" viewBox="0 0 16 16" fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                            <path fill-rule="evenodd"
+                                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82A7.66 7.66 0 018 4.58c.68.003 1.36.092 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.19 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                        </svg>
+                    </a>
+                    <div class="made">Made with <span class="heart">❤️</span> for the fake ones who give hope to real,
+                        yearning learners.</div>
+                </div>
+                <div class="footer-contact">
+                    <a href="mailto:lalityadodla@gmail.com">Think your internship is genuine but was reported? Contact
+                        the site owner.</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/submit.js"></script>
+</body>
+
+</html>
