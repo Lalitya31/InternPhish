@@ -20,7 +20,7 @@ body{font-family:'Aldrich',sans-serif;margin:0;color:#fff;line-height:1.45;backg
 .site-header .container{display:flex;align-items:center;justify-content:space-between;padding:20px 20px}
 .logo{font-weight:700;color:#fff;text-decoration:none;font-size:1.1rem;opacity:0.9}
 .nav{display:flex;gap:18px;margin-left:auto}
-.nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:8px 10px;border-radius:6px;font-weight:600;font-family:'Aldrich',sans-serif}
+.nav a{color:rgba(255,255,255,0.95);text-decoration:none;padding:10px 14px;border-radius:6px;font-weight:600;font-family:'Aldrich',sans-serif;font-size:15px}
 .nav a:hover{background:rgba(255,255,255,0.03)}
 
 .hero{padding:48px 0 120px;position:relative;min-height:80vh;display:flex;align-items:flex-start}
