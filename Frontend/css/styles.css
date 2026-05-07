@@ -110,6 +110,7 @@ body{font-family:'Aldrich',sans-serif;margin:0;color:#fff;line-height:1.45;backg
 .file-upload{display:flex;align-items:center;gap:12px}
 .file-btn{background:transparent;color:var(--accent);padding:8px 12px;border-radius:8px;border:1px solid var(--card-border);cursor:pointer;font-family:'Aldrich',sans-serif}
 .file-name{font-family:'Aldrich',sans-serif;color:rgba(255,255,255,0.6);font-size:14px}
+.file-upload input[type="file"]{position:absolute;opacity:0;width:0;height:0;pointer-events:none}
 .form-actions{margin-top:12px}
 .btn-primary{background:rgba(255,255,255,0.04);color:var(--accent);padding:10px 18px;border-radius:10px;border:1px solid var(--card-border);cursor:pointer;font-family:'Aldrich',sans-serif;font-weight:600}
 
