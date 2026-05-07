@@ -63,13 +63,83 @@ document.addEventListener('DOMContentLoaded', () => {
     if (offerFileInput) {
         offerFileInput.addEventListener('change', (e) => {
             const f = offerFileInput.files && offerFileInput.files[0];
+            const errorEl = document.getElementById('offer-file-error');
+            const clearInvalid = () => {
+                offerFileInput.value = '';
+                selectedOfferFile = null;
+                if (offerFileName) offerFileName.textContent = 'No file selected';
+                const preview = document.getElementById('offer-preview');
+                if (preview) { preview.src = ''; preview.hidden = true; }
+            };
             if (f) {
+                // basic validation: extension + mime + size
+                const allowedExt = ['pdf','doc','docx','png','jpg','jpeg'];
+                const allowedMime = ['application/pdf','application/msword','application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
+                const ext = (f.name.split('.').pop() || '').toLowerCase();
+                const isImage = f.type.startsWith('image/');
+                const extAllowed = allowedExt.includes(ext);
+                const mimeAllowed = allowedMime.includes(f.type) || isImage;
+                if (!extAllowed || !mimeAllowed) {
+                    if (errorEl) errorEl.textContent = 'Invalid file type. Accepts PDF, DOC, DOCX, PNG, JPG.';
+                    clearInvalid();
+                    return;
+                }
+                if (f.size > 10 * 1024 * 1024) {
+                    if (errorEl) errorEl.textContent = 'File too large. Maximum 10MB allowed.';
+                    clearInvalid();
+                    return;
+                }
+                // valid
+                if (errorEl) errorEl.textContent = '';
                 selectedOfferFile = f;
                 const name = f.name.length > 40 ? f.name.slice(0, 36) + '…' : f.name;
                 if (offerFileName) offerFileName.textContent = name;
+                // show image preview for images
+                const preview = document.getElementById('offer-preview');
+                if (isImage && preview) {
+                    const url = URL.createObjectURL(f);
+                    preview.src = url;
+                    preview.hidden = false;
+                    // store url to revoke later
+                    preview.dataset.objectUrl = url;
+                } else if (preview) {
+                    preview.src = '';
+                    preview.hidden = true;
+                }
             } else {
-                selectedOfferFile = null;
-                if (offerFileName) offerFileName.textContent = 'No file selected';
+                if (errorEl) errorEl.textContent = '';
+                clearInvalid();
+            }
+        });
+    }
+
+    // drag & drop support
+    const dropzone = document.getElementById('offer-dropzone');
+    const preview = document.getElementById('offer-preview');
+    if (dropzone) {
+        ['dragenter','dragover'].forEach(ev => {
+            dropzone.addEventListener(ev, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.add('dragover'); }, false);
+        });
+        ['dragleave','drop','dragend'].forEach(ev => {
+            dropzone.addEventListener(ev, (e) => { e.preventDefault(); e.stopPropagation(); dropzone.classList.remove('dragover'); }, false);
+        });
+        dropzone.addEventListener('drop', (e) => {
+            const dt = e.dataTransfer;
+            if (!dt) return;
+            const f = dt.files && dt.files[0];
+            if (!f) return;
+            // assign file to input and trigger change handler
+            const dataTransfer = new DataTransfer();
+            dataTransfer.items.add(f);
+            offerFileInput.files = dataTransfer.files;
+            const event = new Event('change', { bubbles: true });
+            offerFileInput.dispatchEvent(event);
+        });
+        // keyboard support: Enter/Space opens file picker
+        dropzone.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                offerFileInput.click();
             }
         });
     }
@@ -132,6 +202,13 @@ document.addEventListener('DOMContentLoaded', () => {
             // reset file preview
             if (offerFileName) offerFileName.textContent = 'No file selected';
             selectedOfferFile = null;
+            const preview = document.getElementById('offer-preview');
+            if (preview) {
+                if (preview.dataset.objectUrl) URL.revokeObjectURL(preview.dataset.objectUrl);
+                preview.src = '';
+                preview.hidden = true;
+                delete preview.dataset.objectUrl;
+            }
         });
     }
 
