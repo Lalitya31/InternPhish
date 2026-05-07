@@ -143,21 +143,20 @@
 }
 
 .report-card {
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 22px;
+    background: var(--card-bg, transparent);
+    border: none;
+    border-radius: 8px;
+    padding: 18px;
     cursor: pointer;
-    transition: background .2s, border-color .2s, transform .2s;
+    transition: background .18s, transform .18s;
     display: flex;
     flex-direction: column;
-    gap: 12px
+    gap: 10px
 }
 
 .report-card:hover {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: rgba(255, 255, 255, 0.12);
-    transform: translateY(-2px)
+    background: rgba(255, 255, 255, 0.02);
+    transform: translateY(-1px)
 }
 
 .rc-top {
@@ -179,7 +178,7 @@
 .rc-fee {
     font-family: 'VT323', monospace;
     font-size: 26px;
-    color: #ff4444;
+    color: var(--red);
     white-space: nowrap;
     flex-shrink: 0
 }
@@ -299,11 +298,11 @@
 }
 
 .auto-tags-section {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 12px;
-    padding: 16px;
-    margin-bottom: 24px
+    background: var(--card-bg, transparent);
+    border: none;
+    border-radius: 8px;
+    padding: 12px;
+    margin-bottom: 18px
 }
 
 .auto-tags-label {
@@ -373,10 +372,10 @@
 }
 
 .submit-info-card {
-    background: rgba(255, 255, 255, 0.02);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 16px;
-    padding: 28px
+    background: var(--card-bg, transparent);
+    border: none;
+    border-radius: 10px;
+    padding: 20px
 }
 
 .submit-info-card h3 {
@@ -487,7 +486,7 @@
 .detail-fee {
     font-family: 'VT323', monospace;
     font-size: 34px;
-    color: #ff4444
+    color: var(--red)
 }
 
 .detail-date {
@@ -518,18 +517,18 @@
 }
 
 .detail-message {
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 24px;
+    background: var(--card-bg, transparent);
+    border: none;
+    border-radius: 10px;
+    padding: 18px;
     color: rgba(255, 255, 255, 0.7);
     font-size: 15px;
-    line-height: 1.7
+    line-height: 1.6
 }
 
 mark.red-flag {
-    background: rgba(255, 50, 30, 0.15);
-    color: #ff6644;
+    background: rgba(208,68,62,0.12);
+    color: var(--red);
     border-radius: 3px;
     padding: 0 3px;
     font-style: normal
@@ -542,10 +541,10 @@ mark.red-flag {
 }
 
 .stat-card {
-    background: rgba(255, 255, 255, 0.025);
-    border: 1px solid rgba(255, 255, 255, 0.06);
-    border-radius: 14px;
-    padding: 20px;
+    background: var(--card-bg, transparent);
+    border: none;
+    border-radius: 10px;
+    padding: 16px;
     text-align: center
 }
 
@@ -567,18 +566,18 @@ mark.red-flag {
 }
 
 .red-flag-legend {
-    background: rgba(255, 50, 30, 0.06);
-    border: 1px solid rgba(255, 50, 30, 0.2);
-    border-radius: 10px;
-    padding: 14px 16px;
+    background: rgba(208,68,62,0.03);
+    border: 1px solid rgba(208,68,62,0.08);
+    border-radius: 8px;
+    padding: 12px 14px;
     font-size: 13px;
-    color: rgba(255, 180, 160, 0.8);
+    color: rgba(210,140,130,0.8);
     line-height: 1.5;
-    margin-top: 4px
+    margin-top: 6px
 }
 
 .red-flag-legend strong {
-    color: #ff6644
+    color: var(--red)
 }
 
 /* ── Breakdown page ──────────────────────────────── */
@@ -595,10 +594,10 @@ mark.red-flag {
 }
 
 .phrase-item {
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 12px;
-    overflow: hidden;
-    background: rgba(255, 255, 255, 0.02)
+    border: none;
+    border-radius: 8px;
+    overflow: visible;
+    background: var(--card-bg, transparent)
 }
 
 .phrase-trigger {
@@ -640,11 +639,11 @@ mark.red-flag {
 }
 
 .phrase-body-inner {
-    padding: 0 24px 22px;
+    padding: 0 20px 18px;
     color: rgba(255, 255, 255, 0.55);
     font-size: 14px;
-    line-height: 1.7;
-    border-top: 1px solid rgba(255, 255, 255, 0.05)
+    line-height: 1.6;
+    border-top: 1px solid rgba(255, 255, 255, 0.03)
 }
 
 .phrase-body-inner strong {
@@ -727,10 +726,10 @@ mark.red-flag {
 }
 
 .team-card {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid rgba(255, 255, 255, 0.07);
-    border-radius: 12px;
-    padding: 20px;
+    background: var(--card-bg, transparent);
+    border: none;
+    border-radius: 8px;
+    padding: 16px;
     text-align: center
 }
 

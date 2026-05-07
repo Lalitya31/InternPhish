@@ -86,16 +86,16 @@ function highlightRedFlags(text) {
 }
 
 const TAG_COLORS = {
-    'registration fee': '#ff4444',
-    'no interview': '#ff8800',
-    'work from home': '#8888ff',
-    'certificate scam': '#cc44ff',
-    'upfront payment': '#ff4477',
-    'fake stipend': '#ff6600',
-    'urgent': '#ff2222',
-    'limited slots': '#ffaa00',
-    'training fee': '#44aaff',
-    'fake certificate': '#aa44ff',
+    'registration fee': '#d0443e',
+    'no interview': '#c27a2b',
+    'work from home': '#6f73c4',
+    'certificate scam': '#8f5fbf',
+    'upfront payment': '#c65b6a',
+    'fake stipend': '#c4631a',
+    'urgent': '#d0443e',
+    'limited slots': '#c08900',
+    'training fee': '#4b90c4',
+    'fake certificate': '#8e5bbf',
 };
 
 document.addEventListener('DOMContentLoaded', () => {
