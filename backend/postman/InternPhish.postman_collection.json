@@ -1,0 +1,84 @@
+{
+  "info": {
+    "name": "InternPhish Backend",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:4000/api/v1"
+    },
+    {
+      "key": "reportId",
+      "value": ""
+    }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Submit Report",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "companyName", "value": "Acme Internship Group", "type": "text" },
+            { "key": "internshipTitle", "value": "Data Analyst Intern", "type": "text" },
+            { "key": "description", "value": "They asked for a registration fee and guaranteed selection over WhatsApp only.", "type": "text" },
+            { "key": "scamType", "value": "Upfront fee", "type": "text" },
+            { "key": "feeAmount", "value": "49.99", "type": "text" },
+            { "key": "currency", "value": "USD", "type": "text" },
+            { "key": "contactEmail", "value": "recruiter@example.com", "type": "text" },
+            { "key": "websiteUrl", "value": "https://example.com", "type": "text" },
+            { "key": "reporterEmail", "value": "student@example.com", "type": "text" }
+          ]
+        },
+        "url": "{{baseUrl}}/reports"
+      }
+    },
+    {
+      "name": "Search Reports",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/reports?q=fee&companyName=Acme&minFee=1&page=1&limit=20"
+      }
+    },
+    {
+      "name": "Report Details",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/reports/{{reportId}}"
+      }
+    },
+    {
+      "name": "Submit Dispute",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            { "key": "submitterName", "value": "Company Reviewer", "type": "text" },
+            { "key": "submitterEmail", "value": "reviewer@example.com", "type": "text" },
+            { "key": "reason", "value": "This report appears to describe a different organization and includes incorrect contact details.", "type": "text" }
+          ]
+        },
+        "url": "{{baseUrl}}/reports/{{reportId}}/disputes"
+      }
+    },
+    {
+      "name": "Stats",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/reports/stats"
+      }
+    }
+  ]
+}

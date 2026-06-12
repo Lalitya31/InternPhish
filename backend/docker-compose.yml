@@ -1,0 +1,38 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: internphish-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: internphish
+      POSTGRES_USER: internphish
+      POSTGRES_PASSWORD: internphish_password
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+  api:
+    build: .
+    container_name: internphish-api
+    restart: unless-stopped
+    depends_on:
+      - postgres
+    environment:
+      NODE_ENV: production
+      PORT: 4000
+      DATABASE_URL: postgresql://internphish:internphish_password@postgres:5432/internphish?schema=public
+      CORS_ORIGIN: "*"
+      RATE_LIMIT_WINDOW_MS: 900000
+      RATE_LIMIT_MAX: 100
+      UPLOAD_DIR: uploads
+      MAX_FILE_SIZE_MB: 5
+    ports:
+      - "4000:4000"
+    volumes:
+      - uploads:/app/uploads
+    command: sh -c "npx prisma migrate deploy && node dist/server.js"
+
+volumes:
+  postgres-data:
+  uploads:

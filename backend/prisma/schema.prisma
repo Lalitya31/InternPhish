@@ -1,0 +1,67 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ReportStatus {
+  PENDING
+  VERIFIED
+  DISPUTED
+  REMOVED
+}
+
+enum DisputeStatus {
+  OPEN
+  REVIEWING
+  ACCEPTED
+  REJECTED
+}
+
+model Report {
+  id              String       @id @default(uuid())
+  companyName     String
+  internshipTitle String
+  description     String
+  scamType        String?
+  feeAmount       Decimal?     @db.Decimal(10, 2)
+  currency        String       @default("USD")
+  contactEmail    String?
+  contactPhone    String?
+  websiteUrl      String?
+  reporterName    String?
+  reporterEmail   String?
+  location        String?
+  evidenceUrls    String[]     @default([])
+  redFlags        String[]     @default([])
+  riskScore       Int          @default(0)
+  status          ReportStatus @default(PENDING)
+  disputes        Dispute[]
+  createdAt       DateTime     @default(now())
+  updatedAt       DateTime     @updatedAt
+
+  @@index([companyName])
+  @@index([feeAmount])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model Dispute {
+  id              String        @id @default(uuid())
+  reportId        String
+  report          Report        @relation(fields: [reportId], references: [id], onDelete: Cascade)
+  submitterName   String
+  submitterEmail  String
+  reason          String
+  evidenceUrls    String[]      @default([])
+  status          DisputeStatus @default(OPEN)
+  createdAt       DateTime      @default(now())
+  updatedAt       DateTime      @updatedAt
+
+  @@index([reportId])
+  @@index([status])
+  @@index([createdAt])
+}
