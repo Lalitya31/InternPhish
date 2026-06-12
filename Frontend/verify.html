@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="icon" href="file:///C:/Users/lenovo/Downloads/favicon-internphish.png" sizes="32x32" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Verify — InternPhish</title>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container">
+        <a class="logo" href="index.html">InternPhish</a>
+        <nav class="nav" aria-label="Main navigation">
+          <a href="index.html">Home</a>
+          <a href="#reports">Reports</a>
+          <a href="#help">Help</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="verify-page">
+      <div class="container verify-inner">
+        <section class="verify-left">
+          <div class="search-bar">
+            <form id="search-form" role="search">
+              <input id="search-input" class="search-input" type="search" placeholder="Search reports by organization" aria-label="Search reports" />
+              <button class="search-btn" type="submit">Search</button>
+            </form>
+          </div>
+
+          <div class="report-stats">
+            <span class="reports-label">Number of reports:</span>
+            <span class="reports-count" id="reports-count">0</span>
+          </div>
+
+          <section class="report-form">
+            <h2>Report</h2>
+            <form id="report-form">
+              <label for="org-name">Organization name <span style="opacity:0.75">*</span></label>
+              <input id="org-name" name="orgName" type="text" placeholder="e.g. FakeCorp Ltd" required />
+
+              <label for="proof">Proof / Description <span style="opacity:0.75">*</span></label>
+              <textarea id="proof" name="proof" rows="4" placeholder="Explain why this is fake" required></textarea>
+
+              <label for="evidence">Attach evidence <span style="opacity:0.75">*</span></label>
+              <div class="file-upload">
+                <label class="file-btn" for="evidence">Choose file</label>
+                <input id="evidence" name="evidence" type="file" required />
+                <span class="file-name" id="file-name">No file chosen</span>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="btn-primary">Submit report</button>
+              </div>
+            </form>
+          </section>
+        </section>
+
+        <aside class="verify-right">
+          <div class="notice">
+            <h3 class="subject">Subject: Instant Selection (Because Why Not?)</h3>
+
+            <p>We didn’t check your resume.<br>
+            We don’t know your skills.<br>
+            But we’re confident you can pay.</p>
+
+            <p class="price">Secure your internship by sending ₹1,999 immediately.</p>
+
+            <ul class="meta-list">
+              <li><strong>Learning:</strong> optional</li>
+              <li><strong>Certificate:</strong> guaranteed</li>
+              <li><strong>Scam:</strong> obvious</li>
+            </ul>
+
+            <p class="closing">Looking forward to your payment.</p>
+          </div>
+        
+          <!-- contact moved to footer -->
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container">
+        <div>© InternPhish</div>
+        <div class="footer-contact">Think your internship is genuine but was reported? <a href="mailto:contact@internphish.example">Contact the site owner</a>.</div>
+      </div>
+    </footer>
+
+  </body>
+  </html>
